@@ -53,8 +53,7 @@ pipeline {
         stage('Create Jarfile') {
           steps {
             container('maven') {
-              sh
-              'mvn package -DskipTests'
+              sh 'mvn package -DskipTests'
             }
           }
         }

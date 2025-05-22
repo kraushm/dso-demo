@@ -38,25 +38,6 @@ pipeline {
             }
           }
         }
-      }
-    }
-
-    stage('Deploy to Dev') {
-      steps {
-        // TODO
-        sh "echo done"
-      }
-    }
-
-    stage('Package') {
-      parallel {
-        stage('Create Jarfile') {
-          steps {
-            container('maven') {
-              sh 'mvn package -DskipTests'
-            }
-          }
-        }
         stage('OCI Image BnP') {
           steps {
             container('kaniko') {
@@ -64,6 +45,13 @@ pipeline {
             }
           }
         }
+      }
+    }
+
+    stage('Deploy to Dev') {
+      steps {
+        // TODO
+        sh "echo done"
       }
     }
   }

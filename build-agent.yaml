@@ -35,7 +35,7 @@ spec:
       tty: true
     - name: kaniko
       image: gcr.io/kaniko-project/executor:v1.6.0-debug
-      imagePullPolicy: Allways
+      imagePullPolicy: Always
       env:
         - name: container
           value: docker
